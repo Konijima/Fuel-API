@@ -1,7 +1,6 @@
 version=1
 id=2688538916
 title=FuelAPI
-description=
 description=[h1]Incompatible with CocoLiquidOverhaul[/h1]
 description=Stop using CocoLiquidOverhaul anyway the future is here!
 description=
@@ -79,6 +78,5 @@ description=[/code]
 description=
 description=[h2]Github:[/h2]
 description=https://github.com/Konijima/Fuel-API
-description=
 tags=Build 41;Framework;Items;Misc;Models;Multiplayer;Realistic
 visibility=public
