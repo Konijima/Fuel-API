@@ -1,0 +1,81 @@
+version=1
+id=2688538916
+title=FuelAPI
+description=
+description=[h1]Incompatible with CocoLiquidOverhaul[/h1]
+description=Stop using CocoLiquidOverhaul anyway the future is here!
+description=
+description=[h1]Framework to add new Fuel Container items[/h1]
+description=This is a complete re-write of CocoLiquidOverhaul with optimized "game overwrite" letting mod creator add custom fuel container item to the game by adding only Tags to the items.
+description=
+description=[h2]Features[/h2]
+description=[b]Any fuel container can:[/b]
+description=- Take gas from fuel station
+description=- Siphon gas from Vehicles / Trailers
+description=- Add gas to vehicles / Trailers
+description=- Add gas to generator
+description=- Burn corpse
+description=- Light Campfire
+description=- Light BBQ
+description=
+description=[h2]Large Fuel Can[/h2]
+description=By default, this mod add a large fuel canister.
+description=[i](The same red large gas can from CocoLiquidOverhaul)[/i]
+description=
+description=[h3]How to add your own custom Fuel Container?[/h3]
+description=In your own mod, you can create custom fuel container items.
+description=You can check the code for example but here are the simple explanation.
+description=
+description=[b]The Empty Container must have tags:[/b]
+description=Is a normal type item. Like Base.EmptyPetrolCan
+description=[code]Tags = CustomFuelContainer; Petrol_<ModuleName>_<FullGasContainerItemName>[/code]
+description=
+description=[b]The Full of gas Container must have tags:[/b]
+description=Is a drainable type item. Like Base.PetrolCan
+description=[code]Tags = CustomFuelContainer; Empty_<ModuleName>_<EmptyGasContainerItemName>[/code]
+description=
+description=[code]
+description=module FuelAPI {
+description=imports {
+description=    Base,
+description=}
+description=
+description=// The Empty Container
+description=item LargePetrolCan
+description={
+description=    DisplayCategory     = VehicleMaintenance,
+description=    Weight	            = 2,
+description=    Type	            = Normal,
+description=    DisplayName	        = Empty Large Gas Can,
+description=    Icon	            = LargePetrolCan,
+description=    StaticModel         = LargePetrolCan,
+description=    SurvivalGear        = TRUE,
+description=    ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
+description=    ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
+description=    WorldStaticModel    = LargePetrolCan_Ground,
+description=    Tags                = CustomFuelContainer; Petrol_FuelAPI_LargePetrolCanFull,
+description=}
+description=
+description=// The container filled with gasoline
+description=item LargePetrolCanFull
+description={
+description=    DisplayCategory     = VehicleMaintenance,
+description=    Weight	            = 18,
+description=    Type	            = Drainable,
+description=    UseWhileEquipped	= FALSE,
+description=    UseDelta	        = 0.04,
+description=    DisplayName	        = Large Gas Can,
+description=    Icon	            = LargePetrolCan,
+description=    ReplaceOnDeplete	= LargePetrolCan,
+description=    StaticModel         = LargePetrolCan,
+description=    ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
+description=    ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
+description=    WorldStaticModel    = LargePetrolCan_Ground,
+description=    Tags                = CustomFuelContainer; Empty_FuelAPI_LargePetrolCan,
+description=}
+description=
+description=}
+description=[/code]
+description=
+tags=Build 41;Framework;Items;Misc;Models;Multiplayer;Realistic
+visibility=public

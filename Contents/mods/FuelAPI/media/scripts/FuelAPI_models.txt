@@ -1,0 +1,15 @@
+module Base {
+
+    model LargePetrolCan
+    {
+        mesh = LargePetrolCan,
+    }
+
+    model LargePetrolCan_Ground
+    {
+        mesh = WorldItems/LargePetrolCan,
+        texture = LargePetrolCan,
+        scale = 0.01,
+    }
+
+}
