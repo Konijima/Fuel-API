@@ -2,9 +2,9 @@ version=1
 id=2688538916
 title=FuelAPI
 description=[h1]Incompatible with CocoLiquidOverhaul[/h1]
-description=Stop using CocoLiquidOverhaul anyway the future is here!
+description=Stop using CocoLiquidOverhaul, this mod is a cleaner version of it.
 description=
-description=[h1]Framework to add new Fuel Container items[/h1]
+description=[h2]Framework to add new Fuel Container items[/h2]
 description=This is a complete re-write of CocoLiquidOverhaul with optimized "game overwrite" letting mod creator add custom fuel container item to the game by adding only Tags to the items.
 description=
 description=[h2]Features[/h2]
@@ -21,18 +21,22 @@ description=[h2]Large Fuel Can[/h2]
 description=By default, this mod add a large fuel canister.
 description=[i](The same red large gas can from CocoLiquidOverhaul)[/i]
 description=
+description=[h2]Missing something?[/h2]
+description=Let me know if the custom fuel items are missing functionalities.
+description=
 description=[h2]How to add your own custom Fuel Container?[/h2]
 description=In your own mod, you can create custom fuel container items.
 description=You can check the code for example but here are the simple explanation.
 description=
-description=[b]The Empty Container must have tags:[/b]
-description=Is a normal type item. Like Base.EmptyPetrolCan
+description=[b]The empty container[/b]
+description=is a normal type item. See [b]Base.EmptyPetrolCan[/b]
 description=[code]Tags = CustomFuelContainer; Petrol_<ModuleName>_<FullGasContainerItemName>[/code]
 description=
-description=[b]The Full of gas Container must have tags:[/b]
-description=Is a drainable type item. Like Base.PetrolCan
+description=[b]The container filled with gasoline[/b]
+description=is a drainable type item. See [b]Base.PetrolCan[/b]
 description=[code]Tags = CustomFuelContainer; Empty_<ModuleName>_<EmptyGasContainerItemName>[/code]
 description=
+description=[h2]Item Script Example[/h2]
 description=[code]
 description=module FuelAPI {
 description=imports {
@@ -75,6 +79,11 @@ description=}
 description=
 description=}
 description=[/code]
+description=
+description=[h2]My Mods[/h2]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2688538916]FuelAPI[/url]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2687798127]WaterDispenser[/url]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2635550102]Computer[/url]
 description=
 description=[h2]Github:[/h2]
 description=https://github.com/Konijima/Fuel-API
