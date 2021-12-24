@@ -1,0 +1,4 @@
+ItemName_IT = {
+    ItemName_FuelAPI.LargePetrolCan = "Grande tanica di gas vuota",
+    ItemName_FuelAPI.LargePetrolCanFull = "Grande tanica di gas",
+}
