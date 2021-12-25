@@ -93,7 +93,7 @@ function ISWorldObjectContextMenu.onBurnCorpse(worldobjects, player, corpse, ...
         elseif playerObj:getInventory():containsTypeRecurse("Matches") then
             ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), playerInv:getFirstTypeRecurse("Matches"), true, false);
         end
-        ISWorldObjectContextMenu.equip(playerObj, playerObj:getSecondaryHandItem(), playerInv:getFirstEvalRecurse(Utils.PredicateNotEmpty), false, false);
+        ISWorldObjectContextMenu.equip(playerObj, playerObj:getSecondaryHandItem(), playerInv:getFirstEvalRecurse(Utils.PredicateNotEmptyWithBase), false, false);
         ISTimedActionQueue.add(ISBurnCorpseAction:new(playerObj, corpse, 110));
         burnStart = true;
     end
