@@ -41,6 +41,11 @@ function CustomFuelObject:isFull()
     return tonumber(modData.fuelAmount) >= tonumber(self.fuelCapacity);
 end
 
+function CustomFuelObject:isEmpty()
+    local modData = self.isoObject:getModData();
+    return not modData.fuelAmount or tonumber(modData.fuelAmount) <= 0;
+end
+
 function CustomFuelObject:addFuelIntoObject(playerObj, fuelCan)
     if fuelCan and luautils.walkAdj(playerObj, self.isoObject:getSquare()) then
         ISInventoryPaneContextMenu.equipWeapon(fuelCan, false, false, playerObj:getPlayerNum());
@@ -108,6 +113,13 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
             context:addOptionOnTop(getText("ContextMenu_AddFuel"), customFuelObject, CustomFuelObject.addFuelIntoObject, playerObj, fuelCan);
         end
 
+        if fuelCan and not customFuelObject:isEmpty() then
+            local defaultOption = context:getOptionFromName(getText("ContextMenu_TakeGasFromPump"));
+            if not defaultOption then
+                context:addOptionOnTop(getText("ContextMenu_TakeGasFromPump"), worldobjects, ISWorldObjectContextMenu.onTakeFuel, playerObj, customFuelObject.isoObject);
+            end
+        end
+
         if customFuelObject then
             local fullName = customFuelObject:getFullName();
             local option = context:addOptionOnTop(fullName);
@@ -124,4 +136,4 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
         end
     end
 end
-Events.OnPreFillWorldObjectContextMenu.Add(onPreFillWorldObjectContextMenu);
+Events.OnFillWorldObjectContextMenu.Add(onPreFillWorldObjectContextMenu);
