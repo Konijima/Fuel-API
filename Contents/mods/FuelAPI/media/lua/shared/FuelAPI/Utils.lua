@@ -8,19 +8,38 @@ end
 
 local Utils = {};
 
+function Utils.IsCustom(item)
+    return item:getTags():contains("CustomFuelContainer");
+end
+
 ---@param item InventoryItem
 function Utils.PredicateNotEmpty(item)
-    return item:getTags():contains("CustomFuelContainer") and instanceof(item, "DrainableComboItem") and item:getUsedDelta() > 0;
+    return Utils.IsCustom(item) and instanceof(item, "DrainableComboItem") and item:getUsedDelta() > 0;
+end
+
+---@param item InventoryItem
+function Utils.PredicateNotEmptyWithBase(item)
+    return Utils.PredicateNotEmpty(item) or (item:getFullType() == "Base.PetrolCan" and item:getUsedDelta() > 0);
 end
 
 ---@param item InventoryItem
 function Utils.PredicateNotFull(item)
-    return item:getTags():contains("CustomFuelContainer") and instanceof(item, "DrainableComboItem") and item:getUsedDelta() < 1;
+    return Utils.IsCustom(item) and instanceof(item, "DrainableComboItem") and item:getUsedDelta() < 1;
+end
+
+---@param item InventoryItem
+function Utils.PredicateNotFullWithBase(item)
+    return Utils.PredicateNotFull(item) or item:getFullType() == "Base.PetrolCan" and item:getUsedDelta() < 1;
 end
 
 ---@param item InventoryItem
 function Utils.PredicateEmpty(item)
-    return item:getTags():contains("CustomFuelContainer") and not instanceof(item, "DrainableComboItem");
+    return Utils.IsCustom(item) and not instanceof(item, "DrainableComboItem");
+end
+
+---@param item InventoryItem
+function Utils.PredicateEmptyWithBase(item)
+    return Utils.PredicateEmpty(item) or item:getFullType() == "Base.EmptyPetrolCan";
 end
 
 ---@param item DrainableComboItem

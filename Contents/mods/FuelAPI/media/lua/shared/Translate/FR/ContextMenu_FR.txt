@@ -1,0 +1,4 @@
+ContextMenu_FR {
+    ContextMenu_FuelName = "Carburant",
+    ContextMenu_AddFuel = "Ajouter du carburant",
+}

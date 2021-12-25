@@ -9,6 +9,7 @@ description=This is a complete re-write of CocoLiquidOverhaul with optimized "ga
 description=
 description=[h2]Features[/h2]
 description=[b]Any fuel container can:[/b]
+description=- Store gas into Barrels
 description=- Take gas from fuel station
 description=- Siphon gas from Vehicles / Trailers
 description=- Add gas to vehicles / Trailers
@@ -21,10 +22,13 @@ description=[h2]Large Fuel Can[/h2]
 description=By default, this mod add a large fuel canister.
 description=[i](The same red large gas can from CocoLiquidOverhaul)[/i]
 description=
-description=[h2]Missing something?[/h2]
-description=Let me know if the custom fuel items are missing functionalities.
+description=[h2]How to add your own custom Fuel Container [IsoObject]?[/h2]
+description=In your own mod, you can create IsoObject that can store fuel
+description=All you need to do to make a custom IsoObject store fuel is to set the [b]CustomName[/b] to [b]Barrel[/b].
+description=If you need to customize the name using Translation file for your barrels add a [b]GroupName[/b] that suit your needs.
+description=By default the fuel capacity default to 400 unit of fuel, you can set the amount in the tile properties as you need.
 description=
-description=[h2]How to add your own custom Fuel Container?[/h2]
+description=[h2]How to add your own custom Fuel Container [InventoryItem]?[/h2]
 description=In your own mod, you can create custom fuel container items.
 description=You can check the code for example but here are the simple explanation.
 description=
@@ -84,6 +88,9 @@ description=[h2]My Mods[/h2]
 description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2688538916]FuelAPI[/url]
 description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2687798127]WaterDispenser[/url]
 description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2635550102]Computer[/url]
+description=
+description=[h2]Mods using FuelAPI[/h2]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2691818554]Gas Barrels![/url]
 description=
 description=[h2]Github:[/h2]
 description=https://github.com/Konijima/Fuel-API
