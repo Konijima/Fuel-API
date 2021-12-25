@@ -90,7 +90,7 @@ description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=26877981
 description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2635550102]Computer[/url]
 description=
 description=[h2]Mods using FuelAPI[/h2]
-description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2691818554]Gas Barrels![/url]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2693227148]Gas Barrels - Fuel API Version[/url]
 description=
 description=[h2]Github:[/h2]
 description=https://github.com/Konijima/Fuel-API
