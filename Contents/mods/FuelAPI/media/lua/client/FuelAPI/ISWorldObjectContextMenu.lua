@@ -31,7 +31,7 @@ function ISWorldObjectContextMenu.createMenu(player, worldobjects, x, y, test, .
     if context and generator then
         local option = context:getOptionFromName(getText("ContextMenu_GeneratorAddFuel"));
         if not option and fuelItem and not generator:isActivated() and generator:getFuel() < 100 then
-            context:addOption(getText("ContextMenu_GeneratorAddFuel"), worldobjects, ISWorldObjectContextMenu.onAddFuel, fuelItem, generator, player);
+            context:addOptionOnTop(getText("ContextMenu_GeneratorAddFuel"), worldobjects, ISWorldObjectContextMenu.onAddFuel, fuelItem, generator, player);
         end
     end
 
