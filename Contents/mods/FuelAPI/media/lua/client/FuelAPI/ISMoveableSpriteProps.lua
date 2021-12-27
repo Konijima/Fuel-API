@@ -4,11 +4,13 @@ local ISMoveableSpriteProps_canPickUpMoveableInternal = ISMoveableSpriteProps.ca
 function ISMoveableSpriteProps:canPickUpMoveableInternal( _character, _square, _object, _isMulti, ... )
     local canPickUp = ISMoveableSpriteProps_canPickUpMoveableInternal(self, _character, _square, _object, _isMulti, ...);
 
-    local props = _object:getProperties();
-    if props and props:Val("CustomName") == "Barrel" then
-        local modData = _object:getModData();
-        if modData.fuelAmount and tonumber(modData.fuelAmount) > 0 then
-            canPickUp = false;
+    if instanceof(_object, "IsoObject") then
+        local props = _object:getProperties();
+        if props and props:Val("CustomName") == "Barrel" then
+            local modData = _object:getModData();
+            if modData.fuelAmount and tonumber(modData.fuelAmount) > 0 then
+                canPickUp = false;
+            end
         end
     end
 
