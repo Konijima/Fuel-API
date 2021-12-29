@@ -107,13 +107,17 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
         local playerObj = getSpecificPlayer(player);
         local playerInv = playerObj:getInventory();
 
-        local fuelCan = playerInv:getFirstEvalRecurse(Utils.PredicateNotEmptyWithBase);
-
-        if fuelCan and not customFuelObject:isFull() then
-            context:addOptionOnTop(getText("ContextMenu_AddFuel"), customFuelObject, CustomFuelObject.addFuelIntoObject, playerObj, fuelCan);
+        local fuelCanToAdd = playerInv:getFirstEvalRecurse(Utils.PredicateNotEmptyWithBase);
+        if fuelCanToAdd and not customFuelObject:isFull() then
+            context:addOptionOnTop(getText("ContextMenu_AddFuel"), customFuelObject, CustomFuelObject.addFuelIntoObject, playerObj, fuelCanToAdd);
         end
 
-        if fuelCan and not customFuelObject:isEmpty() then
+        local fuelCanToTake = playerInv:getFirstEvalRecurse(Utils.PredicateNotFullWithBase);
+        if not fuelCanToTake then
+            fuelCanToTake = playerInv:getFirstEvalRecurse(Utils.PredicateEmptyWithBase);
+        end
+
+        if fuelCanToTake and not customFuelObject:isEmpty() then
             local defaultOption = context:getOptionFromName(getText("ContextMenu_TakeGasFromPump"));
             if not defaultOption then
                 context:addOptionOnTop(getText("ContextMenu_TakeGasFromPump"), worldobjects, ISWorldObjectContextMenu.onTakeFuel, playerObj, customFuelObject.isoObject);
