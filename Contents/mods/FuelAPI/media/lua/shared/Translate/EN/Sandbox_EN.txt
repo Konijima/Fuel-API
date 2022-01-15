@@ -1,0 +1,15 @@
+Sandbox_EN = {
+	Sandbox_FuelAPI_FuelTransferSpeed = "FuelAPI: Gas Transfer Speed",
+	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Choose the speed at which fuel should transfer.",
+	Sandbox_FuelAPI_FuelTransferSpeed_option1 = "Vanilla",
+	Sandbox_FuelAPI_FuelTransferSpeed_option2 = "Fast",
+	Sandbox_FuelAPI_FuelTransferSpeed_option3 = "Very Fast",
+
+    Sandbox_FuelAPI_BarrelDefaultQuantity = "FuelAPI: Barrel Default Quantity",
+    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Set total quantity of fuel that can be stored in a barrel by default.",
+
+    Sandbox_FuelAPI_CanPickupFullBarrel = "FuelAPI: Can Pickup Full Barrel",
+    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Choose if barrel with fuel inside can be picked up.",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Must be empty",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Can pickup",
+}
