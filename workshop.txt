@@ -2,13 +2,14 @@ version=1
 id=2688538916
 title=FuelAPI
 description=[h1]Incompatible with CocoLiquidOverhaul[/h1]
-description=Stop using CocoLiquidOverhaul, this mod is a cleaner version of it.
+description=Stop using CocoLiquidOverhaul will not be maintained anymore, FuelAPI is a more vanilla friendly version of it.
 description=
 description=[h2]Framework to add new Fuel Container items[/h2]
-description=This is a complete re-write of CocoLiquidOverhaul with optimized "game overwrite" letting mod creator add custom fuel container item to the game by adding only Tags to the items.
+description=This is a complete re-write of CocoLiquidOverhaul with optimized functions "overwrite" letting mod creator add custom fuel container item to the game by adding only Tags to the items.
 description=
 description=[h2]Features[/h2]
 description=[b]Any fuel container can:[/b]
+description=- Sandbox Settings for customization
 description=- Store gas into Barrels
 description=- Take gas from fuel station
 description=- Siphon gas from Vehicles / Trailers
@@ -21,6 +22,31 @@ description=
 description=[h2]Large Fuel Can[/h2]
 description=By default, this mod add a large fuel canister.
 description=[i](The same red large gas can from CocoLiquidOverhaul)[/i]
+description=
+description=[h2]Sandbox Settings[/h2]
+description=Find FuelAPI settings into World sandbox settings tab.
+description=For server owner, add those settings to your server_SandboxVars.lua file.
+description=[i]Default settings:[/i]
+description=[code]
+description=FuelAPI.FuelTransferSpeed=2
+description=FuelAPI.BarrelDefaultQuantity=400
+description=FuelAPI.CanPickupFullBarrel=1
+description=[/code]
+description=
+description=[h3]FuelAPI.FuelTransferSpeed[/h3]
+description=[i]Choose the speed at which fuel should transfer.[/i]
+description=Value: [b]1[/b] = Vanilla
+description=Value: [b]2[/b] = Fast
+description=Value: [b]3[/b] = Very Fast
+description=
+description=[h3]FuelAPI.BarrelDefaultQuantity[/h3]
+description=[i]Set total quantity of fuel that can be stored in a barrel by default.[/i]
+description=Value: [b]400[/b]
+description=
+description=[h3]FuelAPI.CanPickupFullBarrel[/h3]
+description=[i]Choose if barrel with fuel inside can be picked up.[/i]
+description=Value: [b]1[/b] = Must be empty
+description=Value: [b]2[/b] = Can pickup
 description=
 description=[h2]How to add your own custom Fuel Container [IsoObject]?[/h2]
 description=In your own mod, you can create IsoObject that can store fuel
@@ -43,46 +69,48 @@ description=
 description=[h2]Item Script Example[/h2]
 description=[code]
 description=module FuelAPI {
-description=imports {
-description=    Base,
-description=}
+description=    imports {
+description=        Base,
+description=    }
 description=
-description=// The Empty Container
-description=item LargePetrolCan
-description={
-description=    DisplayCategory     = VehicleMaintenance,
-description=    Weight	            = 2,
-description=    Type	            = Normal,
-description=    DisplayName	        = Empty Large Gas Can,
-description=    Icon	            = LargePetrolCan,
-description=    StaticModel         = LargePetrolCan,
-description=    SurvivalGear        = TRUE,
-description=    ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
-description=    ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
-description=    WorldStaticModel    = LargePetrolCan_Ground,
-description=    Tags                = CustomFuelContainer; Petrol_FuelAPI_LargePetrolCanFull,
-description=}
+description=    // The Empty Container
+description=    item LargePetrolCan
+description=    {
+description=        DisplayCategory     = VehicleMaintenance,
+description=        Weight	            = 2,
+description=        Type	            = Normal,
+description=        DisplayName	        = Empty Large Gas Can,
+description=        Icon	            = LargePetrolCan,
+description=        StaticModel         = LargePetrolCan,
+description=        SurvivalGear        = TRUE,
+description=        ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
+description=        ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
+description=        WorldStaticModel    = LargePetrolCan_Ground,
+description=        Tags                = CustomFuelContainer; Petrol_FuelAPI_LargePetrolCanFull,
+description=    }
 description=
-description=// The container filled with gasoline
-description=item LargePetrolCanFull
-description={
-description=    DisplayCategory     = VehicleMaintenance,
-description=    Weight	            = 18,
-description=    Type	            = Drainable,
-description=    UseWhileEquipped	= FALSE,
-description=    UseDelta	        = 0.04,
-description=    DisplayName	        = Large Gas Can,
-description=    Icon	            = LargePetrolCan,
-description=    ReplaceOnDeplete	= LargePetrolCan,
-description=    StaticModel         = LargePetrolCan,
-description=    ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
-description=    ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
-description=    WorldStaticModel    = LargePetrolCan_Ground,
-description=    Tags                = CustomFuelContainer; Empty_FuelAPI_LargePetrolCan,
-description=}
-description=
+description=    // The container filled with gasoline
+description=    item LargePetrolCanFull
+description=    {
+description=        DisplayCategory     = VehicleMaintenance,
+description=        Weight	            = 18,
+description=        Type	            = Drainable,
+description=        UseWhileEquipped	= FALSE,
+description=        UseDelta	        = 0.04,
+description=        DisplayName	        = Large Gas Can,
+description=        Icon	            = LargePetrolCan,
+description=        ReplaceOnDeplete	= LargePetrolCan,
+description=        StaticModel         = LargePetrolCan,
+description=        ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
+description=        ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
+description=        WorldStaticModel    = LargePetrolCan_Ground,
+description=        Tags                = CustomFuelContainer; Empty_FuelAPI_LargePetrolCan,
+description=    }
 description=}
 description=[/code]
+description=
+description=[h2]Videos[/h2]
+description=[url=https://www.youtube.com/watch?v=v7_WjOhb4z0]Nurse - that's a lot of gas.[/url]
 description=
 description=[h2]My Mods[/h2]
 description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2688538916]FuelAPI[/url]
