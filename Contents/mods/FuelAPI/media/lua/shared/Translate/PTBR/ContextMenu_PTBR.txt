@@ -1,0 +1,4 @@
+ContextMenu_PTBR {
+    ContextMenu_FuelName = "Combustível",
+    ContextMenu_AddFuel = "Adicionar Combustível",
+}

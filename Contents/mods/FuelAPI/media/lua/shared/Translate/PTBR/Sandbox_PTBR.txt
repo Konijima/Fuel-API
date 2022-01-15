@@ -1,0 +1,15 @@
+Sandbox_PTBR = {
+	Sandbox_FuelAPI_FuelTransferSpeed = "FuelAPI: Velocidade de transferência de gás",
+	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Escolha a velocidade na qual o combustível deve ser transferido.",
+	Sandbox_FuelAPI_FuelTransferSpeed_option1 = "Vanilla",
+	Sandbox_FuelAPI_FuelTransferSpeed_option2 = "Rápido",
+	Sandbox_FuelAPI_FuelTransferSpeed_option3 = "Muito rápido",
+
+    Sandbox_FuelAPI_BarrelDefaultQuantity = "FuelAPI: Quantidade padrão do barril",
+    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Defina a quantidade total de combustível que pode ser armazenada em um barril por padrão.",
+
+    Sandbox_FuelAPI_CanPickupFullBarrel = "FuelAPI: Pode pegar barril cheio",
+    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Escolha se o barril com combustível dentro pode ser recolhido.",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Deve estar vazio",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Pode retirar",
+}

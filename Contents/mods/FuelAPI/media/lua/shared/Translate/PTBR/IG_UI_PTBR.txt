@@ -1,0 +1,3 @@
+IG_UI_PTBR = {
+    IGUI_BarrelHasFuel = "Tem combustível dentro.",
+}
