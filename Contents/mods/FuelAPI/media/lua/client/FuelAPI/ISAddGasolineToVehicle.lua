@@ -24,7 +24,7 @@ function ISAddGasolineToVehicle:start(...)
         self.tankTarget = self.tankStart + take;
         self.itemTarget = self.itemStart - take / litres;
 
-        self.action:setTime(take * 50);
+        self.action:setTime(take * Utils.GetSandboxFuelTransferSpeed());
 
         print("ISAddGasolineToVehicle_start Litres:" .. litres);
     end

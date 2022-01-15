@@ -20,6 +20,13 @@ function ISTakeFuel:start(...)
 
     ISTakeFuel_start(self, ...);
 
+    --- use custom take time
+    local pumpCurrent = tonumber(self.fuelStation:getPipedFuelAmount());
+    local itemCurrent = math.floor(self.petrolCan:getUsedDelta() / self.petrolCan:getUseDelta() + 0.001);
+    local itemMax = math.floor(1 / self.petrolCan:getUseDelta() + 0.001);
+    local take = math.min(pumpCurrent, itemMax - itemCurrent);
+    self.action:setTime(take * Utils.GetSandboxFuelTransferSpeed());
+
     if self.petrolCan:getTags():contains("CustomFuelContainer") then
         self:setOverrideHandModels(nil, self.petrolCan:getStaticModel());
     end

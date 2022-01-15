@@ -39,7 +39,7 @@ function ISTakeGasolineFromVehicle:start(...)
         self.tankTarget = self.tankStart - take;
         self.itemTarget = self.itemStart + take / litres;
 
-        self.action:setTime(take * 50);
+        self.action:setTime(take * Utils.GetSandboxFuelTransferSpeed());
 
         print("ISTakeGasolineFromVehicle_start Litres:" .. litres);
     end

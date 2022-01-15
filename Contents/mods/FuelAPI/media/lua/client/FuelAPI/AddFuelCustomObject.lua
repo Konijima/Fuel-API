@@ -59,7 +59,7 @@ function AddFuelCustomObject:start()
     local itemCurrent = math.floor(self.petrolCan:getUsedDelta() / self.petrolCan:getUseDelta() + 0.001);
     local pumpMax = self.customFuelObject.fuelCapacity - pumpCurrent;
     local add = math.min(pumpMax, itemCurrent);
-    self.action:setTime(add * 50);
+    self.action:setTime(add * Utils.GetSandboxFuelTransferSpeed());
     self.itemStart = itemCurrent;
     self.itemTarget = itemCurrent - add;
     self.tankStart = pumpCurrent;

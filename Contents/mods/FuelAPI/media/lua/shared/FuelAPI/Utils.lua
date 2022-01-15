@@ -8,6 +8,37 @@ end
 
 local Utils = {};
 
+function Utils.GetSandboxFuelTransferSpeed()
+    local value = 25;
+    if SandboxVars.FuelAPI then
+        local option = tonumber(SandboxVars.FuelAPI.FuelTransferSpeed);
+        if option == 1 then
+            value = 50;
+        elseif option == 2 then
+            value = 25;
+        elseif option == 3 then
+            value = 10;
+        end
+    end
+    return value;
+end
+
+function Utils.GetSandboxBarrelDefaultQuantity()
+    local value = 400;
+    if SandboxVars.FuelAPI then
+        value = tonumber(SandboxVars.FuelAPI.BarrelDefaultQuantity);
+    end
+    return value;
+end
+
+function Utils.GetSandboxCanPickupFullBarrel()
+    local value = false;
+    if SandboxVars.FuelAPI then
+        value = SandboxVars.FuelAPI.CanPickupFullBarrel == 2;
+    end
+    return value;
+end
+
 function Utils.IsCustom(item)
     return item:getTags():contains("CustomFuelContainer");
 end

@@ -69,7 +69,7 @@ function CustomFuelObject:new(isoObject)
                 o.customName = props:Val("CustomName");
 
                 if not props:Val("fuelAmount") then
-                    o.fuelCapacity = 400;
+                    o.fuelCapacity = Utils.GetSandboxBarrelDefaultQuantity();
                 else
                     o.fuelCapacity = tonumber(props:Val("fuelAmount"));
                 end
@@ -141,3 +141,6 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
     end
 end
 Events.OnFillWorldObjectContextMenu.Add(onPreFillWorldObjectContextMenu);
+
+-- Return the class for CustomFuelObject
+return CustomFuelObject;
