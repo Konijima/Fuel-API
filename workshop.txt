@@ -28,9 +28,11 @@ description=Find FuelAPI settings into World sandbox settings tab.
 description=For server owner, add those settings to your server_SandboxVars.lua file.
 description=[i]Default settings:[/i]
 description=[code]
-description=FuelAPI.FuelTransferSpeed=2
-description=FuelAPI.BarrelDefaultQuantity=400
-description=FuelAPI.CanPickupFullBarrel=1
+description=FuelAPI = {
+description=    FuelTransferSpeed = 2,
+description=    BarrelDefaultQuantity = "400",
+description=    CanPickupFullBarrel = 1,
+description=},
 description=[/code]
 description=
 description=[h3]FuelAPI.FuelTransferSpeed[/h3]
