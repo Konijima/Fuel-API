@@ -38,7 +38,7 @@ function ISMoveableSpriteProps:getInfoPanelDescription( _square, _object, _playe
 end
 
 local ISMoveableSpriteProps_pickUpMoveableInternal = ISMoveableSpriteProps.pickUpMoveableInternal;
-function ISMoveableSpriteProps:pickUpMoveableInternal( _character, _square, _object, _sprInstance, _spriteName, _createItem, _rotating, ... )
+function ISMoveableSpriteProps:pickUpMoveableInternal( _character, _square, _object, ... )
     local fuelAmount = 0;
     if instanceof(_object, "IsoObject") and FuelAPIUtils.GetSandboxCanPickupFullBarrel() then
         local props = _object:getProperties();
@@ -50,9 +50,11 @@ function ISMoveableSpriteProps:pickUpMoveableInternal( _character, _square, _obj
         end
     end
 
-    local item = ISMoveableSpriteProps_pickUpMoveableInternal(self, _character, _square, _object, _sprInstance, _spriteName, _createItem, _rotating, ...);
-    if item and fuelAmount > 0 then
+    local item = ISMoveableSpriteProps_pickUpMoveableInternal(self, _character, _square, _object, ...);
+    if instanceof(item, "InventoryItem") and fuelAmount > 0 then
         local modData = item:getModData();
         modData.fuelAmount = fuelAmount;
     end
+
+    return item;
 end
