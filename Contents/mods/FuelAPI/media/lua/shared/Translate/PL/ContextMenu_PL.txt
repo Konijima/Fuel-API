@@ -1,0 +1,4 @@
+ContextMenu_PL {
+    ContextMenu_FuelName = "Paliwo",
+    ContextMenu_AddFuel = "Wlej paliwo",
+}

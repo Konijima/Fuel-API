@@ -1,0 +1,4 @@
+ItemName_PL = {
+    ItemName_FuelAPI.LargePetrolCan = "Pusty du¿y kanister na benzynê",
+    ItemName_FuelAPI.LargePetrolCanFull = "Du¿y kanister z benzyn¹",
+}
