@@ -3,7 +3,7 @@ module FuelAPI {
         Base,
     }
 
-    item LargePetrolCan
+	item LargePetrolCan
 	{
 	    DisplayCategory     = VehicleMaintenance,
 		Weight	            = 2,
@@ -15,10 +15,10 @@ module FuelAPI {
 		ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
         ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
         WorldStaticModel    = LargePetrolCan_Ground,
-        Tags                = CustomFuelContainer; Petrol_FuelAPI_LargePetrolCanFull,
+        Tags                = CustomFuelContainer; EmptyFuelContainer; Gasoline_FuelAPI_LargePetrolCanFull; Diesel_FuelAPI_LargePetrolCanFullwDiesel,
 	}
-
-    item LargePetrolCanFull
+	
+	item LargePetrolCanFull
     {
         DisplayCategory     = VehicleMaintenance,
         Weight	            = 18,
@@ -32,7 +32,7 @@ module FuelAPI {
         ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
         ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
         WorldStaticModel    = LargePetrolCan_Ground,
-        Tags                = CustomFuelContainer; Empty_FuelAPI_LargePetrolCan,
+        Tags                = CustomFuelContainer; FuelType_Gasoline; Empty_FuelAPI_LargePetrolCan,
     }
 
 }
