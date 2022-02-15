@@ -26,7 +26,7 @@ local function doBBQMenu(player, context, worldobjects, test)
 
     local lighter = playerInv:getFirstTypeRecurse("Lighter");
     local matches = playerInv:getFirstTypeRecurse("Matches");
-    local petrol = playerInv:getFirstEvalRecurse(Utils.PredicateNotEmpty);
+    local petrol = playerInv:getFirstEvalRecurse(Utils.PredicateNotEmptyPetrol); --- Tread - look for gasoline items only
 
     local lightFromPetrol = nil;
     if (lighter or matches) and petrol and not bbq:isLit() and bbq:hasFuel() then
