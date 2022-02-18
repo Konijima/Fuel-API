@@ -19,7 +19,7 @@ end
 -------------------------------------------------------------------
 
 ---@class CustomFuelObject
-local CustomFuelObject = ISBaseObject:derive("CustomFuelObject");
+CustomFuelObject = ISBaseObject:derive("CustomFuelObject");  --- Tread - removed "local", so I can call those functions from outside
 
 function CustomFuelObject:getFullName()
     local fullName;
