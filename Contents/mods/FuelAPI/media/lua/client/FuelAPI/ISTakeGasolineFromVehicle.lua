@@ -61,7 +61,7 @@ if not getActivatedMods():contains("TreadsFuelTypesFramework") then
 	function ISTakeGasolineFromVehicle:stop()
 		local currentDelta = self.item:getUsedDelta()
 		
-		if currentDelta <= 0 then --- makes item empty if not filled with any units
+		if currentDelta < self.item:getUseDelta() then --- makes item empty if not filled with any units
 			self.item:Use()
 		elseif  currentDelta < 1 and currentDelta > (1 - self.item:getUseDelta()) then
 			self.item:setUsedDelta(1);
@@ -77,7 +77,7 @@ if not getActivatedMods():contains("TreadsFuelTypesFramework") then
 		
 		local currentDelta = self.item:getUsedDelta()
 		
-		if currentDelta <= 0 then --- makes item empty if not filled with any units
+		if currentDelta < self.item:getUseDelta() then --- makes item empty if not filled with any units
 			self.item:Use()
 		elseif  currentDelta < 1 and currentDelta > (1 - self.item:getUseDelta()) then
 			self.item:setUsedDelta(1);
