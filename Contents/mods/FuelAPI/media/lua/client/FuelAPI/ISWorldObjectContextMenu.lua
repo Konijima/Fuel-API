@@ -83,6 +83,8 @@ function ISWorldObjectContextMenu.createMenu(player, worldobjects, x, y, test, .
 				local PumpText = getText("ContextMenu_TakeGasFromPump");
 				if FuelTypesModActive then
 					PumpText = string.format(getText("IGUI_RS_PumpSiphonFrom"), getText("IGUI_RSFuelType_" .. fuelType)) --- Change text if using my mod - Tread
+				elseif fuelType ~= "Gasoline" then
+					PumpText = PumpText .. " - " .. fuelType	
 				end
 				context:addOptionOnTop(PumpText, worldobjects, ISWorldObjectContextMenu.onTakeFuel, playerObj, haveFuelAPI, fuelType);
 			end
