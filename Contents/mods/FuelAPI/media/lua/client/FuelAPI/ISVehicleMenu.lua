@@ -55,16 +55,26 @@ if not getActivatedMods():contains("TreadsFuelTypesFramework") then --- In order
 					end
 	--			end
 				
-				
+				-------------- Remove native Context menu options - Tread -----------------------
+				local ContextMenuCleaningTable = {}
+				ContextMenuCleaningTable[getText("ContextMenu_VehicleAddGas")] = true
+				ContextMenuCleaningTable[getText("ContextMenu_VehicleSiphonGas")] = true
+				if slice then
+					slice:removeSliceByNames(ContextMenuCleaningTable)
+				else
+					context:removeOptionByNames(ContextMenuCleaningTable)
+				end
 				
 	---------------------------------------------------------------------------------------------------------------------------
 				for _, fuelType in pairs(AcceptedFuelTypes) do	--- Added this loop (to add option for pouring in all eligible fuel types - Tread
 					local fuelItem = ISVehiclePartMenu.getGasCanNotEmpty(playerObj, typeToItem, fuelType); 
 					if fuelItem and part:getContainerContentAmount() < part:getContainerCapacity() then --- checking custom tag here was unnecessary - your util function in getGasCan.... already did it
+						local optionText = getText("ContextMenu_VehicleAddGas")
+						if fuelType ~= "Gasoline" then optionText = optionText .. " - " .. fuelType end
 						if slice then
-							slice:addSlice(getText("ContextMenu_VehicleAddGas"), getTexture("media/ui/vehicles/vehicle_add_gas.png"), ISVehiclePartMenu.onAddGasoline, playerObj, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
+							slice:addSlice(optionText, getTexture("media/ui/vehicles/vehicle_add_gas.png"), ISVehiclePartMenu.onAddGasoline, playerObj, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
 						else
-							context:addOption(getText("ContextMenu_VehicleAddGas"), playerObj,ISVehiclePartMenu.onAddGasoline, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
+							context:addOption(optionText, playerObj,ISVehiclePartMenu.onAddGasoline, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
 						end
 					end
 				end					--- end of loop - Tread
@@ -76,10 +86,12 @@ if not getActivatedMods():contains("TreadsFuelTypesFramework") then --- In order
 				
 					local fuelItem = ISVehiclePartMenu.getGasCanNotFull(playerObj, typeToItem, fuelType);
 					if fuelItem then
+						local optionText = getText("ContextMenu_VehicleSiphonGas")
+						if fuelType ~= "Gasoline" then optionText = optionText .. " - " .. fuelType end
 						if slice then
-							slice:addSlice(getText("ContextMenu_VehicleSiphonGas"), getTexture("media/ui/vehicles/vehicle_siphon_gas.png"), ISVehiclePartMenu.onTakeGasoline, playerObj, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
+							slice:addSlice(optionText, getTexture("media/ui/vehicles/vehicle_siphon_gas.png"), ISVehiclePartMenu.onTakeGasoline, playerObj, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
 						else
-							context:addOption(getText("ContextMenu_VehicleSiphonGas"), playerObj, ISVehiclePartMenu.onTakeGasoline, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
+							context:addOption(optionText, playerObj, ISVehiclePartMenu.onTakeGasoline, part, fuelItem, fuelType) ---added fuelType as parameter - Tread
 						end
 					end
 				end
