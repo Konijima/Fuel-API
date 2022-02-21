@@ -132,6 +132,8 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
 			local AddText = getText("ContextMenu_AddFuel")
 			if FuelTypesModActive then
 				AddText = string.format(getText("IGUI_RS_ObjectAddTo"), getText("IGUI_RSFuelType_" .. fuelType)) --- Change text if using my mod - Tread
+			elseif fuelType ~= "Gasoline" then
+				AddText = AddText .. " - " .. fuelType
 			end
 			--local fuelCanToAdd = playerInv:getFirstEvalRecurse(Utils.PredicateNotEmpty);		--- Tread 
 			local fuelCanToAdd = playerInv:getFirstTagEvalRecurse(("FuelType_" .. fuelType), Utils.PredicateNotEmpty);					--- later I pick first with fitting fuel type
@@ -149,6 +151,8 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
 		local TakeText = getText("ContextMenu_TakeGasFromPump")
 		if FuelTypesModActive then
 			TakeText = string.format(getText("IGUI_RS_ObjectSiphonFrom"), getText("IGUI_RSFuelType_" .. FittingFuelTypes[1])) --- Change text if using my mod - Tread
+		elseif FittingFuelTypes[1] ~= "Gasoline" then
+			TakeText = TakeText .. " - " .. FittingFuelTypes[1]
 		end
 		if fuelCanToTake and not customFuelObject:isEmpty() then
 			local defaultOption = context:getOptionFromName(TakeText);
@@ -166,6 +170,8 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
 			local BarrelFuelType = getText("ContextMenu_FuelName") 
 			if FuelTypesModActive then
 				BarrelFuelType = getText("IGUI_RSFuelType2_" .. customFuelObject.isoObject:getModData().RSFuelType) --- Tread - show fuel Type in tooltip
+			elseif customFuelObject.isoObject:getModData().RSFuelType ~= "Gasoline" then
+				BarrelFuelType = BarrelFuelType .. " - " .. customFuelObject.isoObject:getModData().RSFuelType
 			end
             local tx = getTextManager():MeasureStringX(tooltip.font, BarrelFuelType .. ":") + 20; --- Tread - show fuel Type in tooltip
             local fuelAmount = customFuelObject:getFuelAmount();
