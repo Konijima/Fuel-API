@@ -76,7 +76,7 @@ function ISWorldObjectContextMenu.createMenu(player, worldobjects, x, y, test, .
 				if not fuelTypeCans or #fuelTypeCans < 1 then
 					fuelTypeCans[1] = playerInv:getFirstEvalRecurse(Utils.PredicateEmptyWithBase);
 				end
-			else 
+			elseif not FuelTypesModActive or UtilsRS.PropaneOnGasStations() == 1 then --- Allow "fuelling" Propane Tanks if my mod is off or has proper setting 
 				fuelTypeCans[1] = playerInv:getFirstEvalRecurse(Utils.PredicatePropaneTankNotFull);
 			end	
 			if fuelTypeCans and #fuelTypeCans >=1 then
