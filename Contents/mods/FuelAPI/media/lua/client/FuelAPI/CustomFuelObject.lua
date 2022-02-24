@@ -127,6 +127,7 @@ local function onPreFillWorldObjectContextMenu(player, context, worldobjects, te
 		
 		
 		local FittingFuelTypes = FuelTypesTableRS[customFuelObject.isoObject:getModData().RSFuelType] --- list all eligible Fuel Types
+		if FittingFuelTypes == nil then FittingFuelTypes = FuelTypesTableRS["Gasoline"] end
         
 		for _, fuelType in pairs(FittingFuelTypes) do --- Tread - add menu option per eligible Fuel Type
 			local AddText = getText("ContextMenu_AddFuel")
