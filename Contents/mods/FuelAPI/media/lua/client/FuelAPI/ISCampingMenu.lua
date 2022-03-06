@@ -24,7 +24,7 @@ local function doCampingMenu(player, context, worldobjects, test)
                 lighter = item
             elseif type == "Matches" then
                 matches = item
-            elseif Utils.PredicateNotEmpty(item) then
+            elseif Utils.PredicateNotEmptyPetrol(item) then  --- Tread - look only for Gasoline items
                 petrol = item;
             end
         end
