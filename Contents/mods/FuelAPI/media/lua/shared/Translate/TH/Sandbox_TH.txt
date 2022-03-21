@@ -1,0 +1,15 @@
+Sandbox_TH = {
+	Sandbox_FuelAPI_FuelTransferSpeed = "FuelAPI: ความเร็วในการเติมน้ำมันเชื้อเพลิง",
+	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "เลือกความเร็วในการเติมน้ำมันเชื้อเพลิง",
+	Sandbox_FuelAPI_FuelTransferSpeed_option1 = "ดั้งเดิม",
+	Sandbox_FuelAPI_FuelTransferSpeed_option2 = "เร็ว",
+	Sandbox_FuelAPI_FuelTransferSpeed_option3 = "รวดเร็วมาก",
+
+    Sandbox_FuelAPI_BarrelDefaultQuantity = "FuelAPI: ค่าเริ่มต้นปริมาณความจุของถัง",
+    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "กำหนดค่าเริ่มต้นปริมาณความจุของถังสำหรับการจัดเก็บน้ำมันเชื้อเพลิง",
+
+    Sandbox_FuelAPI_CanPickupFullBarrel = "FuelAPI: การเคลื่อนย้ายถังบรรจุน้ำมัน",
+    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "การเคลื่อนย้ายถังที่มีน้ำมันเชื้อเพลิงบรรจุอยู่",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "ถังเปล่าเท่านั้น",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "เคลื่อนย้ายได้",
+}
