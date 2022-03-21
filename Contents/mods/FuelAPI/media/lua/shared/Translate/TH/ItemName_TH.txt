@@ -1,0 +1,4 @@
+ItemName_TH = {
+    ItemName_FuelAPI.LargePetrolCan = "แกลลอนเปล่า",
+    ItemName_FuelAPI.LargePetrolCanFull = "แกลลอนน้ำมันขนาดใหญ่",
+}
