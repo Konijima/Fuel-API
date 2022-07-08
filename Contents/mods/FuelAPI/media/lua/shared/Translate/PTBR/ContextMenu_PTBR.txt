@@ -1,5 +1,5 @@
 ContextMenu_PTBR {
     ContextMenu_FuelName = "Combustível",
     ContextMenu_AddFuel = "Adicionar Combustível",
-    ContextMenu_AddAllFuel = "Add All",
+    ContextMenu_AddAllFuel = "Adicionar tudo",
 }

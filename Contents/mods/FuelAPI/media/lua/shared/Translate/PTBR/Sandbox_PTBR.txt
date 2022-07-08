@@ -15,6 +15,6 @@ Sandbox_PTBR = {
     Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Deve estar vazio",
     Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Pode retirar",
 
-    Sandbox_FuelAPI_BarrelRandomQuantity = "Barrel Random Fuel Quantity",
-    Sandbox_FuelAPI_BarrelRandomQuantity_tooltip = "Barrel Start With Random Quantity the first time a player find it.",
+    Sandbox_FuelAPI_BarrelRandomQuantity = "Quantidade de Combustível Aleatória do Barril",
+    Sandbox_FuelAPI_BarrelRandomQuantity_tooltip = "O barril começa com quantidade aleatória na primeira vez que um jogador o encontra.",
 }

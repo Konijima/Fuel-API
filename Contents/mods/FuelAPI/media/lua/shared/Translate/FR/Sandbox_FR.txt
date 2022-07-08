@@ -15,6 +15,6 @@ Sandbox_FR = {
     Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Doit être vide",
     Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Peut ramasser",
 
-    Sandbox_FuelAPI_BarrelRandomQuantity = "Barrel Random Fuel Quantity",
-    Sandbox_FuelAPI_BarrelRandomQuantity_tooltip = "Barrel Start With Random Quantity the first time a player find it.",
+    Sandbox_FuelAPI_BarrelRandomQuantity = "Quantité de carburant aléatoire du baril",
+    Sandbox_FuelAPI_BarrelRandomQuantity_tooltip = "Le baril démarre avec une quantité aléatoire la première fois qu'un joueur le trouve.",
 }
