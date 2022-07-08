@@ -1,4 +1,5 @@
 ItemName_RU = {
-    ItemName_FuelAPI.LargePetrolCan = "Пустая большая канистра",
-    ItemName_FuelAPI.LargePetrolCanFull = "Большая канистра",
+    ItemName_FuelAPI.LargePetrolCan = "?????? ??????? ????????",
+    ItemName_FuelAPI.LargePetrolCanFull = "??????? ????????",
+    ItemName_FuelAPI.LargePetrolCanWater = "Large Gas Can with Water",
 }

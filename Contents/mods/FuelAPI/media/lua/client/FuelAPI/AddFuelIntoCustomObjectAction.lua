@@ -2,18 +2,18 @@ require "TimedActions/ISBaseTimedAction";
 
 local Utils = require("FuelAPI/Utils");
 
-local AddFuelCustomObject = ISBaseTimedAction:derive("AddFuelCustomObject");
+local AddFuelIntoCustomObjectAction = ISBaseTimedAction:derive("AddFuelIntoCustomObjectAction");
 
-function AddFuelCustomObject:isValid()
+function AddFuelIntoCustomObjectAction:isValid()
     return self.customFuelObject and not self.customFuelObject:isFull();
 end
 
-function AddFuelCustomObject:waitToStart()
+function AddFuelIntoCustomObjectAction:waitToStart()
     self.character:faceLocation(self.square:getX(), self.square:getY());
     return self.character:shouldBeTurning();
 end
 
-function AddFuelCustomObject:update()
+function AddFuelIntoCustomObjectAction:update()
     self.petrolCan:setJobDelta(self:getJobDelta());
     self.character:faceLocation(self.square:getX(), self.square:getY());
 
@@ -31,15 +31,12 @@ function AddFuelCustomObject:update()
     self.character:setMetabolicTarget(Metabolics.LightWork);
 end
 
-function AddFuelCustomObject:start()
-    if Utils.PredicateEmptyWithBase(self.petrolCan) then
+function AddFuelIntoCustomObjectAction:start()
+    if Utils.predicateEmptyPetrol(self.petrolCan) then
         local emptyCan = self.petrolCan;
-        if self.petrolCan:getFullType() == "Base.EmptyPetrolCan" then
-            self.petrolCan = self.character:getInventory():AddItem("Base.PetrolCan");
-        else
-            self.petrolCan = self.character:getInventory():AddItem(Utils.GetPetrolItemFromTag(emptyCan));
-        end
-        self.petrolCan:setUsedDelta(0);
+        local newType = emptyCan:getReplaceType("PetrolSource") or "Base.PetrolCan";
+        self.petrolCan = self.character:getInventory():AddItem(newType);
+        self.petrolCan:setUsedDelta(0)
         if self.character:getPrimaryHandItem() == emptyCan then
             self.character:setPrimaryHandItem(self.petrolCan);
         end
@@ -69,12 +66,12 @@ function AddFuelCustomObject:start()
     self:setOverrideHandModels(self.petrolCan:getStaticModel(), nil);
 end
 
-function AddFuelCustomObject:stop()
+function AddFuelIntoCustomObjectAction:stop()
     self.petrolCan:setJobDelta(0.0);
     ISBaseTimedAction.stop(self);
 end
 
-function AddFuelCustomObject:perform()
+function AddFuelIntoCustomObjectAction:perform()
     self.petrolCan:setJobDelta(0.0);
     local itemMax = math.floor(1 / self.petrolCan:getUseDelta() + 0.001);
     self.petrolCan:setUsedDelta(self.itemTarget / itemMax);
@@ -88,7 +85,7 @@ function AddFuelCustomObject:perform()
 end
 
 ---@param fuelStation CustomFuelObject
-function AddFuelCustomObject:new(character, customFuelObject, petrolCan, time)
+function AddFuelIntoCustomObjectAction:new(character, customFuelObject, petrolCan, time)
     local o = {};
     setmetatable(o, self);
     self.__index = self;
@@ -102,4 +99,4 @@ function AddFuelCustomObject:new(character, customFuelObject, petrolCan, time)
     return o;
 end
 
-return AddFuelCustomObject;
+return AddFuelIntoCustomObjectAction;

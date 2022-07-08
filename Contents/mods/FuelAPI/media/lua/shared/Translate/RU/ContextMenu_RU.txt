@@ -1,4 +1,5 @@
 ContextMenu_RU {
-    ContextMenu_FuelName = "Бензин",
-    ContextMenu_AddFuel = "Добавить бензин",
+    ContextMenu_FuelName = "??????",
+    ContextMenu_AddFuel = "???????? ??????",
+    ContextMenu_AddAllFuel = "Add All",
 }

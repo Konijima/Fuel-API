@@ -1,15 +1,20 @@
 Sandbox_RU = {
-	Sandbox_FuelAPI_FuelTransferSpeed = "FuelAPI: скорость перемещения бензина",
-	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Выберите скорость, с которой должен перемещаться бензин.",
-	Sandbox_FuelAPI_FuelTransferSpeed_option1 = "Оригинальная",
-	Sandbox_FuelAPI_FuelTransferSpeed_option2 = "Быстрая",
-	Sandbox_FuelAPI_FuelTransferSpeed_option3 = "Очень быстрая",
+    Sandbox_FuelAPI = "Fuel API",
 
-    Sandbox_FuelAPI_BarrelDefaultQuantity = "FuelAPI: Вместимость бочек по умолчанию",
-	Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Установить общее количество бензина, который может храниться в бочке по умолчанию.",
+    Sandbox_FuelAPI_FuelTransferSpeed = "Gas Transfer Speed",
+    Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Choose the speed at which fuel should transfer.",
+    Sandbox_FuelAPI_FuelTransferSpeed_option1 = "Vanilla",
+    Sandbox_FuelAPI_FuelTransferSpeed_option2 = "Fast",
+    Sandbox_FuelAPI_FuelTransferSpeed_option3 = "Very Fast",
 
-    Sandbox_FuelAPI_CanPickupFullBarrel = "FuelAPI: Можно поднять полную бочку",
-    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Выберите, можно ли поднять бочку с бензином внутри.",
-    Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Должна быть пустой",
-    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Можно поднять",
+    Sandbox_FuelAPI_BarrelDefaultQuantity = "Barrel Fuel Max Capacity",
+    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Set total quantity of fuel that can be stored in a barrel by default.",
+
+    Sandbox_FuelAPI_CanPickupFullBarrel = "Can Pickup Full Barrel",
+    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Choose if barrel with fuel inside can be picked up.",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Must be empty",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Can pickup",
+
+    Sandbox_FuelAPI_BarrelRandomQuantity = "Barrel Random Fuel Quantity",
+    Sandbox_FuelAPI_BarrelRandomQuantity_tooltip = "Barrel Start With Random Quantity the first time a player find it.",
 }

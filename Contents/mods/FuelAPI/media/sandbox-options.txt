@@ -1,10 +1,11 @@
 VERSION = 1,
+
 option FuelAPI.FuelTransferSpeed
 {
 	type = enum,
 	numValues = 3,
 	default = 2,
-	page = WorldOptions,
+	page = FuelAPI,
 	translation = FuelAPI_FuelTransferSpeed,
 }
 
@@ -12,7 +13,7 @@ option FuelAPI.BarrelDefaultQuantity
 {
 	type = string,
 	default = 400,
-	page = WorldOptions,
+	page = FuelAPI,
 	translation = FuelAPI_BarrelDefaultQuantity,
 }
 
@@ -21,6 +22,14 @@ option FuelAPI.CanPickupFullBarrel
 	type = enum,
 	numValues = 2,
 	default = 1,
-	page = WorldOptions,
+	page = FuelAPI,
 	translation = FuelAPI_CanPickupFullBarrel,
+}
+
+option FuelAPI.BarrelRandomQuantity
+{
+	type = boolean,
+	default = true,
+	page = FuelAPI,
+	translation = FuelAPI_BarrelRandomQuantity,
 }

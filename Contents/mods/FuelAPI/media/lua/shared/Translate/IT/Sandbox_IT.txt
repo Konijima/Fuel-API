@@ -1,15 +1,20 @@
 Sandbox_IT = {
-	Sandbox_FuelAPI_FuelTransferSpeed = "FuelAPI: Velocit√† di trasferimento del gas",
-	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Scegli la velocit√† alla quale il carburante deve essere trasferito.",
+    Sandbox_FuelAPI = "Fuel API",
+
+	Sandbox_FuelAPI_FuelTransferSpeed = "Velocit‡ di trasferimento del gas",
+	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Scegli la velocit‡ alla quale il carburante deve essere trasferito.",
 	Sandbox_FuelAPI_FuelTransferSpeed_option1 = "Vaniglia",
 	Sandbox_FuelAPI_FuelTransferSpeed_option2 = "Veloce",
 	Sandbox_FuelAPI_FuelTransferSpeed_option3 = "Molto veloce",
 
-    Sandbox_FuelAPI_BarrelDefaultQuantity = "FuelAPI: Quantit√† predefinita del barilotto",
-    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Imposta la quantit√† totale di carburante che pu√≤ essere immagazzinata in un barile per impostazione predefinita.",
+    Sandbox_FuelAPI_BarrelDefaultQuantity = "Quantit‡ predefinita del barilotto",
+    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Imposta la quantit‡ totale di carburante che puÚ essere immagazzinata in un barile per impostazione predefinita.",
 
-    Sandbox_FuelAPI_CanPickupFullBarrel = "FuelAPI: Pu√≤ raccogliere la canna piena",
-    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Scegli se √® possibile raccogliere il barile con il carburante all'interno.",
+    Sandbox_FuelAPI_CanPickupFullBarrel = "PuÚ raccogliere la canna piena",
+    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Scegli se Ë possibile raccogliere il barile con il carburante all'interno.",
     Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Deve essere vuoto",
-    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Pu√≤ ritirare",
+    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "PuÚ ritirare",
+
+    Sandbox_FuelAPI_BarrelRandomQuantity = "Barrel Random Fuel Quantity",
+    Sandbox_FuelAPI_BarrelRandomQuantity_tooltip = "Barrel Start With Random Quantity the first time a player find it.",
 }
