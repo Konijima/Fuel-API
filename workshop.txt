@@ -1,115 +1,16 @@
 version=1
 id=2688538916
 title=FuelAPI
-description=[h1]Incompatible with CocoLiquidOverhaul[/h1]
-description=Stop using CocoLiquidOverhaul will not be maintained anymore, FuelAPI is a more vanilla friendly version of it.
-description=
-description=[h2]Framework to add new Fuel Container items[/h2]
-description=This is a complete re-write of CocoLiquidOverhaul with optimized functions "overwrite" letting mod creator add custom fuel container item to the game by adding only Tags to the items.
-description=
 description=[h2]Features[/h2]
-description=[b]Any fuel container can:[/b]
-description=- Sandbox Settings for customization
-description=- Store gas into Barrels
-description=- Take gas from fuel station
-description=- Siphon gas from Vehicles / Trailers
-description=- Add gas to vehicles / Trailers
-description=- Add gas to generator
-description=- Burn corpse
-description=- Light Campfire
-description=- Light BBQ
+description=- Sandbox Settings.
+description=- Can store fuel into barrels.
+description=- Large Gas Can, can also store water into it.
+description=- Barrel can spawn with random amount of fuel.
 description=
-description=[h2]Large Fuel Can[/h2]
-description=By default, this mod add a large fuel canister.
-description=[i](The same red large gas can from CocoLiquidOverhaul)[/i]
-description=
-description=[h2]Sandbox Settings[/h2]
-description=Find FuelAPI settings into World sandbox settings tab.
-description=For server owner, add those settings to your server_SandboxVars.lua file.
-description=[i]Default settings:[/i]
-description=[code]
-description=FuelAPI = {
-description=    FuelTransferSpeed = 2,
-description=    BarrelDefaultQuantity = "400",
-description=    CanPickupFullBarrel = 1,
-description=},
-description=[/code]
-description=
-description=[h3]FuelAPI.FuelTransferSpeed[/h3]
-description=[i]Choose the speed at which fuel should transfer.[/i]
-description=Value: [b]1[/b] = Vanilla
-description=Value: [b]2[/b] = Fast
-description=Value: [b]3[/b] = Very Fast
-description=
-description=[h3]FuelAPI.BarrelDefaultQuantity[/h3]
-description=[i]Set total quantity of fuel that can be stored in a barrel by default.[/i]
-description=Value: [b]400[/b]
-description=
-description=[h3]FuelAPI.CanPickupFullBarrel[/h3]
-description=[i]Choose if barrel with fuel inside can be picked up.[/i]
-description=Value: [b]1[/b] = Must be empty
-description=Value: [b]2[/b] = Can pickup
-description=
-description=[h2]How to add your own custom Fuel Container [IsoObject]?[/h2]
-description=In your own mod, you can create IsoObject that can store fuel
-description=All you need to do to make a custom IsoObject store fuel is to set the [b]CustomName[/b] to [b]Barrel[/b].
-description=If you need to customize the name using Translation file for your barrels add a [b]GroupName[/b] that suit your needs.
-description=By default the fuel capacity default to 400 unit of fuel, you can set the amount in the tile properties as you need.
-description=
-description=[h2]How to add your own custom Fuel Container [InventoryItem]?[/h2]
-description=In your own mod, you can create custom fuel container items.
-description=You can check the code for example but here are the simple explanation.
-description=
-description=[b]The empty container[/b]
-description=is a normal type item. See [b]Base.EmptyPetrolCan[/b]
-description=[code]Tags = CustomFuelContainer; Petrol_<ModuleName>_<FullGasContainerItemName>[/code]
-description=
-description=[b]The container filled with gasoline[/b]
-description=is a drainable type item. See [b]Base.PetrolCan[/b]
-description=[code]Tags = CustomFuelContainer; Empty_<ModuleName>_<EmptyGasContainerItemName>[/code]
-description=
-description=[h2]Item Script Example[/h2]
-description=[code]
-description=module FuelAPI {
-description=    imports {
-description=        Base,
-description=    }
-description=
-description=    // The Empty Container
-description=    item LargePetrolCan
-description=    {
-description=        DisplayCategory     = VehicleMaintenance,
-description=        Weight	            = 2,
-description=        Type	            = Normal,
-description=        DisplayName	        = Empty Large Gas Can,
-description=        Icon	            = LargePetrolCan,
-description=        StaticModel         = LargePetrolCan,
-description=        SurvivalGear        = TRUE,
-description=        ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
-description=        ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
-description=        WorldStaticModel    = LargePetrolCan_Ground,
-description=        Tags                = CustomFuelContainer; Petrol_FuelAPI_LargePetrolCanFull,
-description=    }
-description=
-description=    // The container filled with gasoline
-description=    item LargePetrolCanFull
-description=    {
-description=        DisplayCategory     = VehicleMaintenance,
-description=        Weight	            = 18,
-description=        Type	            = Drainable,
-description=        UseWhileEquipped	= FALSE,
-description=        UseDelta	        = 0.04,
-description=        DisplayName	        = Large Gas Can,
-description=        Icon	            = LargePetrolCan,
-description=        ReplaceOnDeplete	= LargePetrolCan,
-description=        StaticModel         = LargePetrolCan,
-description=        ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
-description=        ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
-description=        WorldStaticModel    = LargePetrolCan_Ground,
-description=        Tags                = CustomFuelContainer; Empty_FuelAPI_LargePetrolCan,
-description=    }
-description=}
-description=[/code]
+description=[h3]Latest Update[/h3]
+description=The mod has been updated for 41.72.
+description=Great news, this game patch have integrated most of the FuelAPI logic. This mean that items can now contain fuel without the need for FuelAPI.
+description=FuelAPI will still offer some features such as the large gas can and filling barrels with fuel.
 description=
 description=[h2]Videos[/h2]
 description=[url=https://www.youtube.com/watch?v=v7_WjOhb4z0]Nurse - that's a lot of gas.[/url]
