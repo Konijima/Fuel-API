@@ -1,4 +1,5 @@
 module FuelAPI {
+
     imports {
         Base,
     }
@@ -10,10 +11,11 @@ module FuelAPI {
 		Type	                = Normal,
 		DisplayName	            = Empty Large Gas Can,
 		Icon	                = LargePetrolCan,
-		StaticModel             = LargePetrolCan,
 		ReplaceInSecondHand     = Bag_LargePetrolCan_LHand holdingbagleft,
         ReplaceInPrimaryHand    = Bag_LargePetrolCan_RHand holdingbagright,
+		StaticModel             = LargePetrolCan,
         WorldStaticModel        = LargePetrolCan_Ground,
+		SurvivalGear            = TRUE,
         CanStoreWater           = TRUE,
         ReplaceOnUseOn	        = WaterSource-LargePetrolCanWater,
         Tags                    = EmptyPetrol,
@@ -23,16 +25,16 @@ module FuelAPI {
     item LargePetrolCanFull
     {
         DisplayCategory         = VehicleMaintenance,
-        Weight	                = 15,
+        Weight	                = 10,
         Type	                = Drainable,
         UseWhileEquipped	    = FALSE,
         UseDelta	            = 0.04,
         DisplayName	            = Large Gas Can,
         Icon	                = LargePetrolCan,
         ReplaceOnDeplete	    = LargePetrolCan,
-        StaticModel             = LargePetrolCan,
         ReplaceInSecondHand     = Bag_LargePetrolCan_LHand holdingbagleft,
         ReplaceInPrimaryHand    = Bag_LargePetrolCan_RHand holdingbagright,
+        StaticModel             = LargePetrolCan,
         WorldStaticModel        = LargePetrolCan_Ground,
         Tags                    = Petrol,
     }
@@ -40,18 +42,16 @@ module FuelAPI {
     item LargePetrolCanWater
     {
         DisplayCategory         = WaterContainer,
-        Weight	                = 15,
+        Weight	                = 10,
         Type	                = Drainable,
         DisplayName	            = Large Gas Can With Water,
         Icon	                = LargePetrolCan,
-        StaticModel             = LargePetrolCan,
         ReplaceInSecondHand     = Bag_LargePetrolCan_LHand holdingbagleft,
         ReplaceInPrimaryHand    = Bag_LargePetrolCan_RHand holdingbagright,
+        FillFromDispenserSound  = GetWaterFromDispenserMetalBig,
+        FillFromTapSound        = GetWaterFromTapMetalBig,
+        StaticModel             = LargePetrolCan,
         WorldStaticModel        = LargePetrolCan_Ground,
-        FillFromDispenserSound  = GetWaterFromDispenserGlass,
-        FillFromTapSound        = GetWaterFromTapGlass,
-        CustomEatSound          = DrinkingFromBottleGlass,
-        EatType                 = Pot,
         CanStoreWater           = TRUE,
         IsWaterSource           = TRUE,
         UseWhileEquipped	    = FALSE,
