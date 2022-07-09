@@ -21,7 +21,6 @@ function CustomFuelObject:getFullName()
     else
         return getText(fullName);
     end
-
 end
 
 function CustomFuelObject:setFuelAmount(amount)
@@ -44,6 +43,11 @@ end
 function CustomFuelObject:isEmpty()
     local modData = self.isoObject:getModData();
     return not modData.fuelAmount or tonumber(modData.fuelAmount) <= 0;
+end
+
+function CustomFuelObject:reset()
+    local modData = self.isoObject:getModData();
+    modData.instanced = false;
 end
 
 function CustomFuelObject:addFuelIntoObject(playerObj, fuelCan)
@@ -75,12 +79,14 @@ function CustomFuelObject:new(isoObject)
         if sprite then
             local props = sprite:getProperties();
             if props and props:Val("CustomName") == "Barrel" then
+                ---@type IsoObject
+                o.isoObject = isoObject;
                 o.groupName = props:Val("GroupName");
                 o.customName = props:Val("CustomName");
                 o.textureName = isoObject:getTextureName();
 
                 if not props:Val("fuelAmount") then
-                    o.fuelCapacity = tonumber(SandboxVars.FuelAPI.BarrelDefaultQuantity);
+                    o.fuelCapacity = SandboxVars.FuelAPI.BarrelMaxCapacity or 400;
                 else
                     o.fuelCapacity = tonumber(props:Val("fuelAmount"));
                 end
@@ -88,14 +94,13 @@ function CustomFuelObject:new(isoObject)
                 if modData and not modData.instanced then
                     modData.instanced = true;
                     modData.fuelAmount = -1; -- set empty & bypass randomization from game engine
-                    if SandboxVars.FuelAPI.BarrelRandomQuantity then
-                        modData.fuelAmount = ZombRand(tonumber(SandboxVars.FuelAPI.BarrelDefaultQuantity));
+                    if SandboxVars.FuelAPI.BarrelRandomQuantityPercent ~= 0 then
+                        local randomAmount = ZombRand( o.fuelCapacity * SandboxVars.FuelAPI.BarrelRandomQuantityPercent );
+                        if randomAmount == 0 then randomAmount = -1; end
+                        modData.fuelAmount = randomAmount;
                     end
                     isoObject:transmitModData();
                 end
-
-                ---@type IsoObject
-                o.isoObject = isoObject;
                 return o;
             end
         end
@@ -170,7 +175,7 @@ local function onFillWorldObjectContextMenu(player, context, worldobjects, test)
 
     --- Custom Object Tooltip
     if customFuelObject then
-        local fullName = customFuelObject:getFullName();
+        local fullName = Translator.getMoveableDisplayName(customFuelObject:getFullName());
         local option = context:addOptionOnTop(fullName);
         local tooltip = ISToolTip:new();
         tooltip:setName(fullName);
@@ -183,6 +188,13 @@ local function onFillWorldObjectContextMenu(player, context, worldobjects, test)
         tooltip.description = string.format("%s: <SETX:%d> %d / %d", getText("ContextMenu_FuelName"), tx, fuelAmount, customFuelObject.fuelCapacity);
         tooltip.maxLineWidth = 512;
         option.toolTip = tooltip;
+
+        if isDebugEnabled() then
+            local function reset()
+                customFuelObject:reset();
+            end
+            context:addOption("[DEBUG] Reset Barrel", nil, reset)
+        end
     end
 end
 Events.OnFillWorldObjectContextMenu.Add(onFillWorldObjectContextMenu);

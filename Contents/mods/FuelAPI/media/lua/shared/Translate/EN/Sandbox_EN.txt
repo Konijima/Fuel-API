@@ -1,20 +1,12 @@
 Sandbox_EN = {
     Sandbox_FuelAPI = "Fuel API",
 
-	Sandbox_FuelAPI_FuelTransferSpeed = "Gas Transfer Speed",
-	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Choose the speed at which fuel should transfer.",
-	Sandbox_FuelAPI_FuelTransferSpeed_option1 = "Vanilla",
-	Sandbox_FuelAPI_FuelTransferSpeed_option2 = "Fast",
-	Sandbox_FuelAPI_FuelTransferSpeed_option3 = "Very Fast",
+    Sandbox_FuelAPI_BarrelMaxCapacity = "Barrel Fuel Max Capacity",
+    Sandbox_FuelAPI_BarrelMaxCapacity_tooltip = "The maximum amount of fuel a barrel can contain.",
 
-    Sandbox_FuelAPI_BarrelDefaultQuantity = "Barrel Fuel Max Capacity",
-    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Set total quantity of fuel that can be stored in a barrel by default.",
+    Sandbox_FuelAPI_BarrelCanPickupFull = "Can Pickup Full Barrel",
+    Sandbox_FuelAPI_BarrelCanPickupFull_tooltip = "Allow picking up barrel that contain fuel.",
 
-    Sandbox_FuelAPI_CanPickupFullBarrel = "Can Pickup Full Barrel",
-    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Choose if barrel with fuel inside can be picked up.",
-    Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Must be empty",
-    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Can pickup",
-
-    Sandbox_FuelAPI_BarrelRandomQuantity = "Barrel Random Fuel Quantity",
-    Sandbox_FuelAPI_BarrelRandomQuantity_tooltip = "Barrel Start With Random Quantity the first time a player find it.",
+    Sandbox_FuelAPI_BarrelRandomQuantityPercent = "Barrel Random Initial Fuel (%)",
+    Sandbox_FuelAPI_BarrelRandomQuantityPercent_tooltip = "The percentage of initial random fuel found in barrels.",
 }
