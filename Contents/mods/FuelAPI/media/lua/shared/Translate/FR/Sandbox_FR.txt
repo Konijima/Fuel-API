@@ -1,15 +1,12 @@
 Sandbox_FR = {
-	Sandbox_FuelAPI_FuelTransferSpeed = "FuelAPI: Vitesse de transfert de gaz",
-	Sandbox_FuelAPI_FuelTransferSpeed_tooltip = "Choisissez la vitesse à laquelle le carburant doit être transféré.",
-	Sandbox_FuelAPI_FuelTransferSpeed_option1 = "Vanilla",
-	Sandbox_FuelAPI_FuelTransferSpeed_option2 = "Rapide",
-	Sandbox_FuelAPI_FuelTransferSpeed_option3 = "Très Rapide",
+    Sandbox_FuelAPI = "Fuel API",
 
-    Sandbox_FuelAPI_BarrelDefaultQuantity = "FuelAPI: Quantité par défaut du baril",
-    Sandbox_FuelAPI_BarrelDefaultQuantity_tooltip = "Définissez la quantité totale de carburant pouvant être stockée dans un baril par défaut.",
+    Sandbox_FuelAPI_BarrelMaxCapacity = "Capacit� maximale du baril de carburant",
+    Sandbox_FuelAPI_BarrelMaxCapacity_tooltip = "La quantit� maximale de carburant qu'un baril peut contenir.",
 
-    Sandbox_FuelAPI_CanPickupFullBarrel = "FuelAPI: Peut ramasser le baril plein",
-    Sandbox_FuelAPI_CanPickupFullBarrel_tooltip = "Choisissez si le baril avec du carburant à l'intérieur peut être ramassé.",
-    Sandbox_FuelAPI_CanPickupFullBarrel_option1 = "Doit être vide",
-    Sandbox_FuelAPI_CanPickupFullBarrel_option2 = "Peut ramasser",
+    Sandbox_FuelAPI_BarrelCanPickupFull = "Peut ramasser le baril plein",
+    Sandbox_FuelAPI_BarrelCanPickupFull_tooltip = "Autoriser le ramassage des barils contenant du carburant.",
+
+    Sandbox_FuelAPI_BarrelRandomQuantityPercent = "Baril de carburant initial al�atoire (%)",
+    Sandbox_FuelAPI_BarrelRandomQuantityPercent_tooltip = "Le pourcentage de carburant al�atoire initial trouv� dans les barils.",
 }

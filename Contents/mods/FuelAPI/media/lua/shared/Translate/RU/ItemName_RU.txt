@@ -1,4 +1,0 @@
-ItemName_RU = {
-    ItemName_FuelAPI.LargePetrolCan = "Пустая большая канистра",
-    ItemName_FuelAPI.LargePetrolCanFull = "Большая канистра",
-}

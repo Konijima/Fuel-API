@@ -1,4 +1,5 @@
 ItemName_ES = {
-    ItemName_FuelAPI.LargePetrolCan = "Lata de gas grande vacÃ­a",
+    ItemName_FuelAPI.LargePetrolCan = "Lata de gas grande vacía",
     ItemName_FuelAPI.LargePetrolCanFull = "Lata de gas grande",
+    ItemName_FuelAPI.LargePetrolCanWater = "Lata de gas grande (riempito d'acqua)",
 }

@@ -20,3 +20,7 @@ table.insert(ProceduralDistributions.list.CrateMechanics.items, 5);
 -- CarSupplyTools
 table.insert(ProceduralDistributions.list.CarSupplyTools.items, "FuelAPI.LargePetrolCan");
 table.insert(ProceduralDistributions.list.CarSupplyTools.items, 5);
+
+-- GasStorageMechanics
+table.insert(ProceduralDistributions.list.GasStorageMechanics.items, "FuelAPI.LargePetrolCan");
+table.insert(ProceduralDistributions.list.GasStorageMechanics.items, 5);

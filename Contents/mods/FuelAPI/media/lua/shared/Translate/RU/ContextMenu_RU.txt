@@ -1,4 +1,0 @@
-ContextMenu_RU {
-    ContextMenu_FuelName = "Бензин",
-    ContextMenu_AddFuel = "Добавить бензин",
-}

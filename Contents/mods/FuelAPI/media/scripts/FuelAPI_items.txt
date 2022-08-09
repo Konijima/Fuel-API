@@ -1,38 +1,62 @@
 module FuelAPI {
+
     imports {
         Base,
     }
 
     item LargePetrolCan
 	{
-	    DisplayCategory     = VehicleMaintenance,
-		Weight	            = 2,
-		Type	            = Normal,
-		DisplayName	        = Empty Large Gas Can,
-		Icon	            = LargePetrolCan,
-		StaticModel         = LargePetrolCan,
-		SurvivalGear        = TRUE,
-		ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
-        ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
-        WorldStaticModel    = LargePetrolCan_Ground,
-        Tags                = CustomFuelContainer; Petrol_FuelAPI_LargePetrolCanFull,
+	    DisplayCategory         = VehicleMaintenance,
+		Weight	                = 2,
+		Type	                = Normal,
+		DisplayName	            = Empty Large Gas Can,
+		Icon	                = LargePetrolCan,
+		ReplaceInSecondHand     = Bag_LargePetrolCan_LHand holdingbagleft,
+        ReplaceInPrimaryHand    = Bag_LargePetrolCan_RHand holdingbagright,
+		StaticModel             = LargePetrolCan,
+        WorldStaticModel        = LargePetrolCan_Ground,
+		SurvivalGear            = TRUE,
+        CanStoreWater           = TRUE,
+        ReplaceOnUseOn	        = WaterSource-LargePetrolCanWater,
+        Tags                    = EmptyPetrol,
+        ReplaceTypes            = PetrolSource LargePetrolCanFull;WaterSource LargePetrolCanWater,
 	}
 
     item LargePetrolCanFull
     {
-        DisplayCategory     = VehicleMaintenance,
-        Weight	            = 18,
-        Type	            = Drainable,
-        UseWhileEquipped	= FALSE,
-        UseDelta	        = 0.04,
-        DisplayName	        = Large Gas Can,
-        Icon	            = LargePetrolCan,
-        ReplaceOnDeplete	= LargePetrolCan,
-        StaticModel         = LargePetrolCan,
-        ReplaceInSecondHand = Bag_LargePetrolCan_LHand holdingbagleft,
-        ReplaceInPrimaryHand= Bag_LargePetrolCan_RHand holdingbagright,
-        WorldStaticModel    = LargePetrolCan_Ground,
-        Tags                = CustomFuelContainer; Empty_FuelAPI_LargePetrolCan,
+        DisplayCategory         = VehicleMaintenance,
+        Weight	                = 10,
+        Type	                = Drainable,
+        UseWhileEquipped	    = FALSE,
+        UseDelta	            = 0.04,
+        DisplayName	            = Large Gas Can,
+        Icon	                = LargePetrolCan,
+        ReplaceOnDeplete	    = LargePetrolCan,
+        ReplaceInSecondHand     = Bag_LargePetrolCan_LHand holdingbagleft,
+        ReplaceInPrimaryHand    = Bag_LargePetrolCan_RHand holdingbagright,
+        StaticModel             = LargePetrolCan,
+        WorldStaticModel        = LargePetrolCan_Ground,
+        Tags                    = Petrol,
+    }
+
+    item LargePetrolCanWater
+    {
+        DisplayCategory         = WaterContainer,
+        Weight	                = 10,
+        Type	                = Drainable,
+        DisplayName	            = Large Gas Can With Water,
+        Icon	                = LargePetrolCan,
+        ReplaceInSecondHand     = Bag_LargePetrolCan_LHand holdingbagleft,
+        ReplaceInPrimaryHand    = Bag_LargePetrolCan_RHand holdingbagright,
+        FillFromDispenserSound  = GetWaterFromDispenserMetalBig,
+        FillFromTapSound        = GetWaterFromTapMetalBig,
+        StaticModel             = LargePetrolCan,
+        WorldStaticModel        = LargePetrolCan_Ground,
+        CanStoreWater           = TRUE,
+        IsWaterSource           = TRUE,
+        UseWhileEquipped	    = FALSE,
+        ReplaceOnDeplete        = LargePetrolCan,
+        ReplaceOnUseOn          = WaterSource-LargePetrolCanWater,
     }
 
 }
