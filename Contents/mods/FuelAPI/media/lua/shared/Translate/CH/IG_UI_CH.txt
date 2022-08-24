@@ -1,0 +1,3 @@
+IG_UI_CH = {
+    IGUI_BarrelHasFuel = "內有燃油.",
+}

@@ -1,0 +1,12 @@
+Sandbox_CH = {
+    Sandbox_FuelAPI = "燃油應用界面",
+
+    Sandbox_FuelAPI_BarrelMaxCapacity = "燃油桶最大容量",
+    Sandbox_FuelAPI_BarrelMaxCapacity_tooltip = "一個油桶所乘裝燃油的最大值.",
+
+    Sandbox_FuelAPI_BarrelCanPickupFull = "可拾起滿載油桶",
+    Sandbox_FuelAPI_BarrelCanPickupFull_tooltip = "允許撿拾內含燃油的油桶.",
+
+    Sandbox_FuelAPI_BarrelRandomQuantityPercent = "油桶中含有油量的亂數起始值 (%)",
+    Sandbox_FuelAPI_BarrelRandomQuantityPercent_tooltip = "油桶中起始存油量的亂數百分比.",
+}
