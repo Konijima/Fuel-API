@@ -1,0 +1,5 @@
+ContextMenu_CH {
+    ContextMenu_FuelName = "燃油",
+    ContextMenu_AddFuel = "添加燃油",
+    ContextMenu_AddAllFuel = "添加全部",
+}
