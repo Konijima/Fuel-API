@@ -1,4 +1,5 @@
 ContextMenu_TH {
     ContextMenu_FuelName = "น้ำมัน​เชื้อเพลิง",
     ContextMenu_AddFuel = "เติม​น้ำมัน​เชื้อเพลิง",
+    ContextMenu_AddAllFuel = "เติม​น้ำมัน​เชื้อเพลิงทั้งหมด",
 }
